@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥Simple API App🔥</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <section>
+        <h1>WHAT DOES YOUR NAME SAY ABOUT YOUR PERSONALITY?</h1>
+
+        <div class="center-div">
+            <div class="details">
+                <label for="">ENTER YOUR NAME</label><br>
+                <input type="text" id="nameid" name="">
+            </div>
+
+            <div class="img-div">
+                <img src="../images/image.jpg" alt="image" width="200" height="200" class="imgid">
+            </div>
+
+            <button>CLICK ME</button>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){ //whenever the whole document is ready
+            $('button').click(function(){ //when we click the button CLICK ME, then
+                //get the name from the name we input
+                const name = $('#nameid').val();
+                alert(name);
+                
+                //change the image accordingly using joeschmoe.io api
+                $('.imgid').attr('src', `https://joeschmoe.io/api/v1/${name}`);
+                const imgchange = $('.imgid');
+                console.log(imgchange);
+            })
+        })
+    </script>
+</body>
+</html>
